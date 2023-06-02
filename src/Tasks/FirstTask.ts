@@ -1,6 +1,3 @@
-
-import {Component} from 'react'
-
 interface ResData {
   userId: number;
   id: number;
@@ -38,38 +35,5 @@ class FifteenthTitle {
   }
 }
 
-// const fifteenthTitle = new FifteenthTitle();
-// fifteenthTitle.run()
-
-class FifteenthTitleComponent extends Component {
-  state = {
-    title: ''
-  };
-
-  fetchTitle() {
-    const fifteenthTitle = new FifteenthTitle();
-    fifteenthTitle.run()
-      .then(title: => {
-        this.setState({ title });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
-
-  componentDidMount() {
-    this.fetchTitle();
-  }
-
-  render() {
-    const { title } = this.state;
-
-    return (
-      <div>
-        <h1>Fifteenth Title: {title}</h1>
-      </div>
-    );
-  }
-}
-
-export default FifteenthTitleComponent;
+const fifteenthTitle = new FifteenthTitle();
+fifteenthTitle.run()
